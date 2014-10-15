@@ -1,0 +1,34 @@
+{
+  "name": "imgflo-url",
+  "version": "0.1.0",
+  "description": "Conveniently produce authorized imgflo URLs.",
+  "keywords": [
+    "imgflo"
+  ],
+  "homepage": "https://github.com/the-grid/imgflo-url",
+  "bugs": "https://github.com/the-grid/imgflo-url/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Paul Young",
+    "url": "https://github.com/paulyoung"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-grid/imgflo-url.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha spec --compilers coffee:coffee-script/register --reporter spec"
+  },
+  "dependencies": {
+    "MD5": "^1.2.1",
+    "query-string": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "coffee-script": "^1.8.0",
+    "mocha": "^1.21.5"
+  },
+  "engines": {
+    "node": "~0.10.26"
+  }
+}
