@@ -1,5 +1,5 @@
 {expect} = require 'chai'
-imgflo = require '../imgflo-url'
+imgflo = require '../index'
 
 
 describe 'imgflo-url', ->
