@@ -9,9 +9,12 @@ path = require 'path'
 # @param graph [String] The name of the imgflo graph.
 # @param params [Object] The parameters to pass to imgflo.
 # @option params input [String] The input URL to pass to imgflo.
+# @param format [String] The desired format of the resulting image. e.g. 'jpg'
+#   or 'png'. If not specified, the extension of the file provided as input is
+#   used.
 # @return [String] The imgflo URL.
 #
-imgflo = (config, graph, params) ->
+imgflo = (config, graph, params, format) ->
   throw new Error 'imgflo config object not provided' unless config?
 
   {server, key, secret} = config
@@ -27,6 +30,9 @@ imgflo = (config, graph, params) ->
 
   extension = path.extname(input).match(/^\.(\w+)/)[1]
   return input if extension is 'gif'
+
+  format ?= extension
+  graph = "#{graph}.#{format}" if format?
 
   query = "?#{qs.stringify(params)}"
   token = MD5 "#{graph}#{query}#{secret}"

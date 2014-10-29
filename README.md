@@ -3,4 +3,4 @@
 Conveniently produce authorized [imgflo](https://github.com/jonnor/imgflo) URLs.
 
 ## Running tests
-Set environment variables for `IMGFLO_KEY`, `IMGFLO_SECRET`, and `IMGFLO_TOKEN` then run `npm test`.
+Set environment variables for `IMGFLO_KEY`, `IMGFLO_SECRET`, `IMGFLO_TOKEN_01`, and `IMGFLO_TOKEN_02` then run `npm test`.
