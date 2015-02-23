@@ -1,7 +1,7 @@
 MD5 = require 'MD5'
 qs = require 'query-string'
 path = require 'path'
-
+url = require 'url'
 
 # imgflo-url
 #
@@ -28,7 +28,8 @@ imgflo = (config, graph, params, format) ->
   {input} = params
   throw new Error 'imgflo params must contain an "input" key' unless input?
 
-  extension = path.extname(input).match(/^\.(\w+)/)[1]
+  parsed = url.parse input
+  extension = path.extname(parsed.pathname).match(/^\.(\w+)/)[1]
   return input if extension is 'gif'
 
   format ?= extension
