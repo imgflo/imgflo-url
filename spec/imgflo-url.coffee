@@ -169,6 +169,20 @@ describe 'imgflo-url', ->
           expect(url).to.contain 'passthrough.jpg'
           expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/e48c2b3866af0e91fb4b1ef4d5399b7d/passthrough.jpg?input=http%3A%2F%2F1.bp.blogspot.com%2F-1h8jX1lfGJc%2FUnlTZ3Fsq6I%2FAAAAAAAAAOo%2Fdw7IXnJBO5A%2Fs1600%2FIMG_1722.JPG'
 
+      context 'with a url without an extension', ->
+
+        it 'should produce the correct URL', ->
+          config = getConfig()
+
+          params =
+            input: 'https://lh6.ggpht.com/qhLc1KUYP3YpNUtf9MujZVld1ctgsU0_oEEqp6Jkte8hW1UNJqKSm9-ExP-uzyL3r2c=h556'
+            color1: '#0A2A2F'
+            color2: '#FDE7A0'
+            srgb: true
+
+          url = imgflo config, 'gradientmap', params
+
+          expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/79e7c60252e6d0b804c555b818b8b50f/gradientmap?input=https%3A%2F%2Flh6.ggpht.com%2FqhLc1KUYP3YpNUtf9MujZVld1ctgsU0_oEEqp6Jkte8hW1UNJqKSm9-ExP-uzyL3r2c%3Dh556&color1=%230A2A2F&color2=%23FDE7A0&srgb=true'
 
     context 'specifying an image format', ->
 
