@@ -1,6 +1,10 @@
 {expect} = require 'chai'
 imgflo = require '../index'
 
+getConfig = ->
+  server: 'https://imgflo.herokuapp.com/'
+  key: 'key'
+  secret: 'secret'
 
 describe 'imgflo-url', ->
 
@@ -151,6 +155,19 @@ describe 'imgflo-url', ->
           url = imgflo config, 'passthrough', params
 
           expect(url).to.equal "https://imgflo.herokuapp.com/graph/#{process.env.IMGFLO_KEY}/#{process.env.IMGFLO_TOKEN_03}/passthrough.jpg?input=https%3A%2F%2Fv.cdn.vine.co%2Fr%2Fvideos%2FB5B06468B91176403722801139712_342c9a1c624.1.5.15775156368984795444.mp4.jpg%3FversionId%3DedU_LrAtIFsGvZj.Fgi0Si1bem68tBlk"
+
+      context 'with a url with uppercase JPG extension', ->
+
+        it 'should produce the correct URL', ->
+          config = getConfig()
+
+          params =
+            input: 'http://1.bp.blogspot.com/-1h8jX1lfGJc/UnlTZ3Fsq6I/AAAAAAAAAOo/dw7IXnJBO5A/s1600/IMG_1722.JPG'
+
+          url = imgflo config, 'passthrough', params
+
+          expect(url).to.contain 'passthrough.jpg'
+          expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/e48c2b3866af0e91fb4b1ef4d5399b7d/passthrough.jpg?input=http%3A%2F%2F1.bp.blogspot.com%2F-1h8jX1lfGJc%2FUnlTZ3Fsq6I%2FAAAAAAAAAOo%2Fdw7IXnJBO5A%2Fs1600%2FIMG_1722.JPG'
 
 
     context 'specifying an image format', ->
