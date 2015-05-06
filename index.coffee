@@ -31,7 +31,6 @@ imgflo = (config, graph, params, format) ->
   throw new Error 'imgflo params must contain an "input" key' unless input?
 
   parsed = url.parse input
-  extension = path.extname(parsed.pathname).match(/^\.(\w+)/)[1]
   match = path.extname(parsed.pathname).match(/^\.(\w+)/)
   if match?
     extension = match[1].toLowerCase()
