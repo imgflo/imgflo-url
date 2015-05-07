@@ -32,8 +32,7 @@ imgflo = (config, graph, params, format) ->
 
   parsed = url.parse input
   match = path.extname(parsed.pathname).match(/^\.(\w+)/)
-  if match?
-    extension = match[1].toLowerCase()
+  extension = match?[1].toLowerCase()
   return input if extension is 'gif'
 
   format ?= extension
