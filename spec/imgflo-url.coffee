@@ -78,10 +78,7 @@ describe 'imgflo-url', ->
 
       it 'should throw an error', ->
         exercise = ->
-          config =
-            server: 'https://imgflo.herokuapp.com/'
-            key: 'key'
-            secret: 'secret'
+          config = getConfig()
 
           imgflo config, 'passthrough', {}
 
@@ -132,10 +129,7 @@ describe 'imgflo-url', ->
       context 'with a url with query parameters', ->
 
         it 'should produce the correct URL', ->
-          config =
-            server: 'https://imgflo.herokuapp.com/'
-            key: 'key'
-            secret: 'secret'
+          config = getConfig()
 
           params =
             input: 'https://v.cdn.vine.co/r/videos/B5B06468B91176403722801139712_342c9a1c624.1.5.15775156368984795444.mp4.jpg?versionId=edU_LrAtIFsGvZj.Fgi0Si1bem68tBlk'
