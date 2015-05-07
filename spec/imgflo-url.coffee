@@ -24,8 +24,8 @@ describe 'imgflo-url', ->
       it 'should throw an error', ->
         exercise = ->
           config =
-            key: process.env.IMGFLO_KEY
-            secret: process.env.IMGFLO_SECRET
+            key: 'key'
+            secret: 'secret'
 
           imgflo config, 'passthrough',
             input: 'https://a.com/b.png'
@@ -39,7 +39,7 @@ describe 'imgflo-url', ->
         exercise = ->
           config =
             server: 'https://imgflo.herokuapp.com/'
-            secret: process.env.IMGFLO_SECRET
+            secret: 'secret'
 
           imgflo config, 'passthrough',
             input: 'https://a.com/b.png'
@@ -53,7 +53,7 @@ describe 'imgflo-url', ->
         exercise = ->
           config =
             server: 'https://imgflo.herokuapp.com/'
-            key: process.env.IMGFLO_KEY
+            key: 'key'
 
           imgflo config, 'passthrough',
             input: 'https://a.com/b.png'
@@ -65,10 +65,7 @@ describe 'imgflo-url', ->
 
     it 'should throw an error', ->
       exercise = ->
-        config =
-          server: 'https://imgflo.herokuapp.com/'
-          key: process.env.IMGFLO_KEY
-          secret: process.env.IMGFLO_SECRET
+        config = getConfig()
 
         imgflo config, 'passthrough'
 
@@ -83,8 +80,8 @@ describe 'imgflo-url', ->
         exercise = ->
           config =
             server: 'https://imgflo.herokuapp.com/'
-            key: process.env.IMGFLO_KEY
-            secret: process.env.IMGFLO_SECRET
+            key: 'key'
+            secret: 'secret'
 
           imgflo config, 'passthrough', {}
 
@@ -94,10 +91,7 @@ describe 'imgflo-url', ->
     context 'with an input URL for a GIF image', ->
 
       it 'should return the same URL', ->
-        config =
-          server: 'https://imgflo.herokuapp.com/'
-          key: process.env.IMGFLO_KEY
-          secret: process.env.IMGFLO_SECRET
+        config = getConfig()
 
         url = imgflo config, 'passthrough',
           input: 'https://a.com/b.gif'
@@ -109,10 +103,7 @@ describe 'imgflo-url', ->
 
     it 'should throw an error', ->
       exercise = ->
-        config =
-          server: 'https://imgflo.herokuapp.com/'
-          key: process.env.IMGFLO_KEY
-          secret: process.env.IMGFLO_SECRET
+        config = getConfig()
 
         imgflo config, null,
           input: 'https://a.com/b.png'
@@ -125,10 +116,7 @@ describe 'imgflo-url', ->
     context 'not specifying an image format', ->
 
       it 'should produce the correct URL', ->
-        config =
-          server: 'https://imgflo.herokuapp.com/'
-          key: process.env.IMGFLO_KEY
-          secret: process.env.IMGFLO_SECRET
+        config = getConfig()
 
         params =
           input: 'https://pbs.twimg.com/media/BlM0d2-CcAAT9ic.jpg:large'
@@ -138,7 +126,7 @@ describe 'imgflo-url', ->
 
         url = imgflo config, 'gradientmap', params
 
-        expect(url).to.equal "https://imgflo.herokuapp.com/graph/#{process.env.IMGFLO_KEY}/#{process.env.IMGFLO_TOKEN_01}/gradientmap.jpg?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
+        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/7d6ae9fbc8dadde0d1cd24526dea5900/gradientmap.jpg?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
 
 
       context 'with a url with query parameters', ->
@@ -146,15 +134,15 @@ describe 'imgflo-url', ->
         it 'should produce the correct URL', ->
           config =
             server: 'https://imgflo.herokuapp.com/'
-            key: process.env.IMGFLO_KEY
-            secret: process.env.IMGFLO_SECRET
+            key: 'key'
+            secret: 'secret'
 
           params =
             input: 'https://v.cdn.vine.co/r/videos/B5B06468B91176403722801139712_342c9a1c624.1.5.15775156368984795444.mp4.jpg?versionId=edU_LrAtIFsGvZj.Fgi0Si1bem68tBlk'
 
           url = imgflo config, 'passthrough', params
 
-          expect(url).to.equal "https://imgflo.herokuapp.com/graph/#{process.env.IMGFLO_KEY}/#{process.env.IMGFLO_TOKEN_03}/passthrough.jpg?input=https%3A%2F%2Fv.cdn.vine.co%2Fr%2Fvideos%2FB5B06468B91176403722801139712_342c9a1c624.1.5.15775156368984795444.mp4.jpg%3FversionId%3DedU_LrAtIFsGvZj.Fgi0Si1bem68tBlk"
+          expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/0256dbdaea357ae9928f19c50d3d088a/passthrough.jpg?input=https%3A%2F%2Fv.cdn.vine.co%2Fr%2Fvideos%2FB5B06468B91176403722801139712_342c9a1c624.1.5.15775156368984795444.mp4.jpg%3FversionId%3DedU_LrAtIFsGvZj.Fgi0Si1bem68tBlk"
 
       context 'with a url with uppercase JPG extension', ->
 
@@ -187,10 +175,7 @@ describe 'imgflo-url', ->
     context 'specifying an image format', ->
 
       it 'should produce the correct URL', ->
-        config =
-          server: 'https://imgflo.herokuapp.com/'
-          key: process.env.IMGFLO_KEY
-          secret: process.env.IMGFLO_SECRET
+        config = getConfig()
 
         params =
           input: 'https://pbs.twimg.com/media/BlM0d2-CcAAT9ic.jpg:large'
@@ -200,4 +185,4 @@ describe 'imgflo-url', ->
 
         url = imgflo config, 'gradientmap', params, 'png'
 
-        expect(url).to.equal "https://imgflo.herokuapp.com/graph/#{process.env.IMGFLO_KEY}/#{process.env.IMGFLO_TOKEN_02}/gradientmap.png?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
+        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/c681f4fad93f8fb1e5e9333a22b7f760/gradientmap.png?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
