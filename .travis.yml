@@ -1,10 +1,3 @@
 language: node_js
 node_js:
 - '0.10'
-env:
-  global:
-  - secure: Dx2pqzulcauIhVXEqQoNbnwm/EZzam9smHyBd1sPHnnOt5OgikYqnZ5dJOq8gh9wCRCHt1c64NSW0g/04VDofqpBGFifL4eO/c1ZtDioTG4LT+aPXLkt0S7VXP0r2J29JyvcVMBgTi3WRQdBDk4Pd1kYgQlASGSctQmK+Cqw3Jc=
-  - secure: K8Uy8SoQN8S9WuFbeZFBID6XLa7ecgzzB6HoETk91BYJccXTv+VrccnbQ6XYO2cFa5aZyL7QnQjzMRfhjofypr1jvOjVoegfulUGhveypUzEQ1ylnCA8V0bBPHuvMN76ut5fJuUfD49j5dcFjtrdiollZVUiVW1TKjzpJKA4fi0=
-  - secure: PubBxjOCOwDBzTthw7ORFCd9elZi4V2/KXi1Nnrs/oz6sNWyXC2//JLJXSBFe5GwSIt8bngbNWuRcS4ckhn0DAPgPRePDtLQ+HzHDW7noFihG3lbHwamp/wXwVQZl18vBqjntt8XoN3UtV8HgoHBV5L5HuL4rtCyMcarkxSVFnI=
-  - secure: N8fuPmTG2oO51NG7gmulHHhc32Qb3yXS4La9uYjqSkhezhNQDJVpURnjPlXSviC1JmSA3C5TzbJpzSAb80EBAhoyIQmm/G9V+c20eijL+XTs/JYvIAUyz6wqfrtYNMlY1WwYTFmBwzyax+KYij0mguF7uawsuTgTbHGMHBRBdRQ=
-  - secure: Ic1JBG0Q06SLICE4b/7rGH+BkRadPzLMSuH+qAegJ+zCpl55cbf8fUaSk0B1cXkYmVp49D3OFvoDXBa1dQSim+NZlLmT8D/fWGjVS2DGSnHR7EZX5DOL+blgcTuhNM/73a+jCGTQ+7/szOtloG6qbFpRdr+2twUbOBZ8Ea9AgB8=

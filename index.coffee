@@ -1,3 +1,5 @@
+'use strict'
+
 MD5 = require 'MD5'
 qs = require 'query-string'
 path = require 'path'
@@ -29,7 +31,8 @@ imgflo = (config, graph, params, format) ->
   throw new Error 'imgflo params must contain an "input" key' unless input?
 
   parsed = url.parse input
-  extension = path.extname(parsed.pathname).match(/^\.(\w+)/)[1]
+  match = path.extname(parsed.pathname).match(/^\.(\w+)/)
+  extension = match?[1].toLowerCase()
   return input if extension is 'gif'
 
   format ?= extension
