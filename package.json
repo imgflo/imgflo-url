@@ -28,6 +28,9 @@
     "coffee-script": "^1.8.0",
     "mocha": "^1.21.5"
   },
+  "browserify": {
+    "transform": ["coffeeify"]
+  },
   "engines": {
     "node": "~0.10.26"
   }
