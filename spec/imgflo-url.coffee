@@ -1,5 +1,5 @@
 {expect} = require 'chai'
-imgflo = require '../index'
+imgflo = require '../lib/imgflo-url'
 
 getConfig = ->
   server: 'https://imgflo.herokuapp.com/'

@@ -2,6 +2,7 @@
   "name": "imgflo-url",
   "version": "0.5.0",
   "description": "Conveniently produce authorized imgflo URLs.",
+  "main": "lib/imgflo-url.js",
   "keywords": [
     "imgflo"
   ],
@@ -17,7 +18,9 @@
     "url": "https://github.com/the-grid/imgflo-url.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha spec --compilers coffee:coffee-script/register --reporter spec"
+    "build": "npm run clean; ./node_modules/.bin/coffee --compile --output lib/ src/",
+    "clean": "mkdir -p lib; rm -r lib; mkdir lib",
+    "test": "npm run build; ./node_modules/.bin/mocha spec/**/*.coffee --compilers coffee:coffee-script/register --reporter spec"
   },
   "dependencies": {
     "MD5": "^1.2.1",
