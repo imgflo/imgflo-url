@@ -31,6 +31,8 @@ imgflo = (config, graph, params, format) ->
   throw new Error 'imgflo params must contain an "input" key' unless input?
 
   parsed = url.parse input
+  return input if parsed.protocol is 'data:'
+
   match = path.extname(parsed.pathname).match(/^\.(\w+)/)
   extension = match?[1].toLowerCase()
   return input if extension is 'gif'
