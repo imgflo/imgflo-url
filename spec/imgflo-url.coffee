@@ -96,6 +96,17 @@ describe 'imgflo-url', ->
         expect(url).to.equal 'https://a.com/b.gif'
 
 
+    context 'with an input data: URL', ->
+
+      it 'should return the same URL', ->
+        config = getConfig()
+
+        url = imgflo config, 'passthrough',
+          input: 'data:image/gif;base64,R0lGODlhDwAMAL...'
+
+        expect(url).to.equal 'data:image/gif;base64,R0lGODlhDwAMAL...'
+
+
   describe 'without a graph name', ->
 
     it 'should throw an error', ->
