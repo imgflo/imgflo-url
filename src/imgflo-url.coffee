@@ -1,6 +1,6 @@
 'use strict'
 
-MD5 = require 'MD5'
+MD5 = require 'md5'
 qs = require 'query-string'
 path = require 'path'
 url = require 'url'
