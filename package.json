@@ -23,7 +23,7 @@
     "test": "npm run build; ./node_modules/.bin/mocha spec/**/*.coffee --compilers coffee:coffee-script/register --reporter spec"
   },
   "dependencies": {
-    "MD5": "^1.2.1",
+    "md5": "^2.0.0",
     "query-string": "^1.0.0"
   },
   "devDependencies": {
