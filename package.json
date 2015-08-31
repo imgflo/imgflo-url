@@ -1,6 +1,6 @@
 {
   "name": "imgflo-url",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Conveniently produce authorized imgflo URLs.",
   "main": "lib/imgflo-url.js",
   "keywords": [
@@ -23,7 +23,7 @@
     "test": "npm run build; ./node_modules/.bin/mocha spec/**/*.coffee --compilers coffee:coffee-script/register --reporter spec"
   },
   "dependencies": {
-    "MD5": "^1.2.1",
+    "md5": "^2.0.0",
     "query-string": "^1.0.0"
   },
   "devDependencies": {
