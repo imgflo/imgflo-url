@@ -3,11 +3,18 @@ execFile = require('child_process').execFile
 path = require 'path'
 chai = require 'chai'
 
+clone = (obj) ->
+  JSON.parse(JSON.stringify(obj))
+
 imgfloUrlCli = (config, graphname, params, callback) ->
-  environ =
+  custom =
     'IMGFLO_API_KEY': config.key
     'IMGFLO_API_SECRET': config.secret
-  environ.IMGFLO_API_SERVER = config.server if config.server
+  custom.IMGFLO_API_SERVER = config.server if config.server
+
+  environ = clone process.env
+  for k,v of custom
+    environ[k] = v
 
   prog = 'node'
   bin = path.join __dirname, '../bin', 'imgflo-url'
