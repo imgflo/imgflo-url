@@ -8,7 +8,7 @@ Compatible with node.js and browserify.
 
     npm install --save imgflo-url
 
-## Creating a imgflo URL
+## Creating a imgflo URL using API
 
 Example in CoffeeScript
 
@@ -31,6 +31,15 @@ and process it through the `gradientmap` graph,
 applying the specified parameters (in this case `color1`, `color2`, `height`).
 
 For more examples, see the [tests](./spec/imgflo-url.coffee).
+
+## Create an imgflo URL using commandline
+
+    export IMGFLO_API_KEY=key
+    export IMGFLO_API_SECRET=secret
+
+    # if node modules are not on PATH already
+    # PATH=${PATH}:./node_modules/.bin
+    imgflo-url --input http://example.com/barbaz.png --width 300
 
 ## Running tests
 Run `npm test`.
