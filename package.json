@@ -17,6 +17,9 @@
     "type": "git",
     "url": "https://github.com/the-grid/imgflo-url.git"
   },
+  "bin": {
+    "imgflo-url": "bin/imgflo-url"
+  },
   "scripts": {
     "build": "npm run clean; ./node_modules/.bin/coffee --compile --output lib/ src/",
     "clean": "mkdir -p lib; rm -r lib; mkdir lib",
@@ -24,6 +27,7 @@
   },
   "dependencies": {
     "md5": "2.0.0",
+    "minimist": "^1.2.0",
     "query-string": "1.0.1"
   },
   "devDependencies": {
