@@ -9,8 +9,9 @@ imgfloUrlCli = (config, graphname, params, callback) ->
     'IMGFLO_API_SECRET': config.secret
   environ.IMGFLO_API_SERVER = config.server if config.server
 
-  prog = path.join __dirname, '../bin', 'imgflo-url'
-  args = [ graphname ]
+  prog = 'node'
+  bin = path.join __dirname, '../bin', 'imgflo-url'
+  args = [ bin, graphname ]
   for key, value of params
     args.push "--#{key}=#{value}"
 
