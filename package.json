@@ -31,7 +31,7 @@
     "query-string": "1.0.1"
   },
   "devDependencies": {
-    "chai": "1.10.0",
+    "chai": "3.3.0",
     "coffee-script": "1.10.0",
     "mocha": "1.21.5"
   },
