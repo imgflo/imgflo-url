@@ -38,6 +38,7 @@ imgflo = (config, graph, params, format) ->
   return input if extension is 'gif'
 
   format ?= extension
+  format = format.toLowerCase() if format? and typeof format is 'string'
   graph = "#{graph}.#{format}" if format?
 
   query = "?#{qs.stringify(params)}"
