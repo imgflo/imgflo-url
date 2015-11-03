@@ -1,3 +1,8 @@
+# 0.9.0
+
+* Built JavaScript files are no longer checked into git, only included in NPM package.
+May cause problems if using bower or component.io package managers; Use browserify instead.
+
 # 0.8.0
 
 * For `.tif` request `.png` output format, since TIFF is poorly supported by browsers (and imgflo).
