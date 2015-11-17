@@ -39,7 +39,7 @@ For more examples, see the [tests](./spec/imgflo-url.coffee).
 
     # if node modules are not on PATH already
     # PATH=${PATH}:./node_modules/.bin
-    imgflo-url --input http://example.com/barbaz.png --width 300
+    imgflo-url passthrough --input http://example.com/barbaz.png --width 300
 
 ## Running tests
 Run `npm test`.
