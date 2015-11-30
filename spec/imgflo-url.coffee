@@ -87,13 +87,13 @@ describe 'imgflo-url', ->
 
     context 'with an input URL for a GIF image', ->
 
-      it 'should return the same URL', ->
+      it 'should return a proxying URL with noop graph', ->
         config = getConfig()
 
         url = imgflo config, 'passthrough',
           input: 'https://a.com/b.gif'
 
-        expect(url).to.equal 'https://a.com/b.gif'
+        expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/408ff9579217fc27ec7472b8de5e8c3b/noop.gif?input=https%3A%2F%2Fa.com%2Fb.gif'
 
 
     context 'with an input data: URL', ->

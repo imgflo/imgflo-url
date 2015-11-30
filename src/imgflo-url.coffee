@@ -35,9 +35,14 @@ imgflo = (config, graph, params, format) ->
 
   match = path.extname(parsed.pathname).match(/^\.(\w+)/)
   extension = match?[1].toLowerCase()
-  return input if extension is 'gif'
+  if extension is 'gif'
+    graph = 'noop'
+    params =
+      input: params.input
 
   format ?= extension
+  format = format.toLowerCase() if format? and typeof format is 'string'
+  format = 'png' if format? and format is 'tif'
   graph = "#{graph}.#{format}" if format?
 
   query = "?#{qs.stringify(params)}"
