@@ -70,5 +70,5 @@ describe 'imgflo-url CLI', ->
       imgfloUrlCli validConfig, 'gradientmap', params, (err, stdout, stderr) ->
         chai.expect(err).to.not.exist
         chai.expect(stderr).to.equal ''
-        chai.expect(stdout).to.equal "https://imgflo.herokuapp.com/graph/key/7d6ae9fbc8dadde0d1cd24526dea5900/gradientmap.jpg?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
+        chai.expect(stdout).to.equal "https://imgflo.herokuapp.com/graph/key/49467a1d8a94cf6c8350841299ecfb56/gradientmap.jpg?color1=%230A2A2F&color2=%23FDE7A0&input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&srgb=true"
         done()

@@ -134,7 +134,7 @@ describe 'imgflo-url', ->
 
         url = imgflo config, 'gradientmap', params
 
-        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/7d6ae9fbc8dadde0d1cd24526dea5900/gradientmap.jpg?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
+        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/49467a1d8a94cf6c8350841299ecfb56/gradientmap.jpg?color1=%230A2A2F&color2=%23FDE7A0&input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&srgb=true"
 
 
       context 'with a url with query parameters', ->
@@ -175,7 +175,7 @@ describe 'imgflo-url', ->
 
           url = imgflo config, 'gradientmap', params
 
-          expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/79e7c60252e6d0b804c555b818b8b50f/gradientmap?input=https%3A%2F%2Flh6.ggpht.com%2FqhLc1KUYP3YpNUtf9MujZVld1ctgsU0_oEEqp6Jkte8hW1UNJqKSm9-ExP-uzyL3r2c%3Dh556&color1=%230A2A2F&color2=%23FDE7A0&srgb=true'
+          expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/36d57f858d35674ca1626a1a57842b3e/gradientmap?color1=%230A2A2F&color2=%23FDE7A0&input=https%3A%2F%2Flh6.ggpht.com%2FqhLc1KUYP3YpNUtf9MujZVld1ctgsU0_oEEqp6Jkte8hW1UNJqKSm9-ExP-uzyL3r2c%3Dh556&srgb=true'
 
     context 'specifying an image format', ->
 
@@ -190,4 +190,4 @@ describe 'imgflo-url', ->
 
         url = imgflo config, 'gradientmap', params, 'png'
 
-        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/c681f4fad93f8fb1e5e9333a22b7f760/gradientmap.png?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&color1=%230A2A2F&color2=%23FDE7A0&srgb=true"
+        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/47d2fa8035119a3f038dc2be3756e10d/gradientmap.png?color1=%230A2A2F&color2=%23FDE7A0&input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge&srgb=true"
