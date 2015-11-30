@@ -1,3 +1,7 @@
+# 1.0.0
+
+* Query parameters are now sorted. This might break tests.
+
 # 0.9.0
 
 * Built JavaScript files are no longer checked into git, only included in NPM package.
