@@ -1,6 +1,6 @@
 {
   "name": "imgflo-url",
-  "version": "0.10.1",
+  "version": "1.0.0",
   "description": "Conveniently produce authorized imgflo URLs.",
   "main": "lib/imgflo-url.js",
   "keywords": [
