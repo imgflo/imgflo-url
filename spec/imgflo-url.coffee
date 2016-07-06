@@ -95,6 +95,15 @@ describe 'imgflo-url', ->
 
         expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/408ff9579217fc27ec7472b8de5e8c3b/noop.gif?input=https%3A%2F%2Fa.com%2Fb.gif'
 
+    context 'with an imgflo noop url', ->
+
+      it 'should return double-encoded passthrough', ->
+        config = getConfig()
+
+        url = imgflo config, 'passthrough',
+          input: 'https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5764f83177c27abe632d7dce03e55e6d/noop.jpeg?input=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F1200%2F1*f7gpfegwe5jhpYs_1R_neA.jpeg'
+
+        expect(url).to.equal 'https://imgflo.herokuapp.com/graph/key/6e48078f4a068533f7112dc63c28df9f/passthrough.jpeg?input=https%3A%2F%2Fimgflo.herokuapp.com%2Fgraph%2Fvahj1ThiexotieMo%2F5764f83177c27abe632d7dce03e55e6d%2Fnoop.jpeg%3Finput%3Dhttps%253A%252F%252Fcdn-images-1.medium.com%252Fmax%252F1200%252F1*f7gpfegwe5jhpYs_1R_neA.jpeg'
 
     context 'with an input data: URL', ->
 
