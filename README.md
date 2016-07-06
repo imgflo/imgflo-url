@@ -1,4 +1,4 @@
-# imgflo-url [![Build Status](https://travis-ci.org/the-grid/imgflo-url.svg)](https://travis-ci.org/the-grid/imgflo-url)
+# imgflo-url [![Build Status](https://travis-ci.org/imgflo/imgflo-url.svg)](https://travis-ci.org/imgflo/imgflo-url)
 
 Conveniently produce authorized [imgflo](https://github.com/jonnor/imgflo) URLs.
 
