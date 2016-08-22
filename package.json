@@ -6,8 +6,8 @@
   "keywords": [
     "imgflo"
   ],
-  "homepage": "https://github.com/the-grid/imgflo-url",
-  "bugs": "https://github.com/the-grid/imgflo-url/issues",
+  "homepage": "https://github.com/imgflo/imgflo-url",
+  "bugs": "https://github.com/imgflo/imgflo-url/issues",
   "license": "MIT",
   "author": {
     "name": "Paul Young",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-grid/imgflo-url.git"
+    "url": "https://github.com/imgflo/imgflo-url.git"
   },
   "bin": {
     "imgflo-url": "bin/imgflo-url"
