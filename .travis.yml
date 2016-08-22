@@ -9,4 +9,4 @@ deploy:
     secure: O4wLRpryq01wipdFUrogfknY9ILvHNaTySpkVoLiRq74ZyWc7VCQezyce1RmS9AJzs1auOxCmIpwDzckBdoA3V7jULEgr+h6rpTOeBLcGMYelbfyT292hjzKoZC+rpGkK3SbZ3kyaB8LWNUGMqGcvsRrv8eNj3TJN7/vcfi+Wew=
   on:
     tags: true
-    repo: the-grid/imgflo-url
+    repo: imgflo/imgflo-url
