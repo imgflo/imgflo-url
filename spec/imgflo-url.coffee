@@ -115,6 +115,30 @@ describe 'imgflo-url', ->
 
         expect(url).to.equal 'data:image/gif;base64,R0lGODlhDwAMAL...'
 
+    context 'with twitter image url issues', ->
+
+      it '.jpg:large should return noop.jpg', ->
+
+        config = getConfig()
+
+        params =
+          input: 'https://pbs.twimg.com/media/BlM0d2-CcAAT9ic.jpg:large'
+
+        url = imgflo config, 'noop', params, 'jpg'
+
+        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/0125cf1fec905afdcf07a2963c907b2d/noop.jpg?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FBlM0d2-CcAAT9ic.jpg%3Alarge"
+
+      it '.jpg%3Alarge should return noop.jpg', ->
+
+        config = getConfig()
+
+        params =
+          input: 'https://imgflo.herokuapp.com/graph/2b2431f8e7ba7b0/dabcd2b47c33e25505fb1f5615586fb5/noop.jpg?input=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCocKWjJWEAAlPJI.jpg%3Alarge'
+
+        url = imgflo config, 'noop', params, 'jpg'
+
+        expect(url).to.equal "https://imgflo.herokuapp.com/graph/key/c2ee25e62a242c68c32702ad90aedf2e/noop.jpg?input=https%3A%2F%2Fimgflo.herokuapp.com%2Fgraph%2F2b2431f8e7ba7b0%2Fdabcd2b47c33e25505fb1f5615586fb5%2Fnoop.jpg%3Finput%3Dhttps%253A%252F%252Fpbs.twimg.com%252Fmedia%252FCocKWjJWEAAlPJI.jpg%253Alarge"
+
 
   describe 'without a graph name', ->
 
