@@ -1,3 +1,7 @@
+# 1.2.0
+
+* `blob:` URLs short-circuit (like `data:`)
+
 # 1.0.0
 
 * Query parameters are now sorted. This might break tests.

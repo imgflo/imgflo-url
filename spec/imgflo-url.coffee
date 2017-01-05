@@ -115,6 +115,16 @@ describe 'imgflo-url', ->
 
         expect(url).to.equal 'data:image/gif;base64,R0lGODlhDwAMAL...'
 
+    context 'with an input blob: URL', ->
+
+      it 'should return the same URL', ->
+        config = getConfig()
+
+        url = imgflo config, 'passthrough',
+          input: 'blob:http://localhost/0000-0123'
+
+        expect(url).to.equal 'blob:http://localhost/0000-0123'
+
     context 'with twitter image url issues', ->
 
       it '.jpg:large should return noop.jpg', ->

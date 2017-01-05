@@ -29,7 +29,8 @@ imgflo = (config, graph, params, format) ->
   {input} = params
   throw new Error 'imgflo params must contain an "input" key' unless input?
 
-  return input if input.substring(0, 5) == 'data:'
+  return input if input.substring(0, 5) is 'data:'
+  return input if input.substring(0, 5) is 'blob:'
 
   # Remove protocol
   if index = input.indexOf('//') < 7
